@@ -7,7 +7,7 @@ import { useEffect, useMemo } from "react";
 function Book() {
   const clock = useMemo(() => new Clock(), []);
 
-  const book = useMemo(() => {
+  const book = useMemo<FlipBook>(() => {
     const instance = new FlipBook({
       flipDuration: 0.7,
       yBetweenPages: 0.001,
@@ -62,8 +62,8 @@ function Book() {
       book.previousPage();
     };
 
-    const nextBtn = document.querySelector(".next");
-    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector<HTMLButtonElement>(".next");
+    const prevBtn = document.querySelector<HTMLButtonElement>(".prev");
 
     nextBtn?.addEventListener("click", nextPage);
     prevBtn?.addEventListener("click", previousPage);
@@ -71,6 +71,7 @@ function Book() {
     return () => {
       nextBtn?.removeEventListener("click", nextPage);
       prevBtn?.removeEventListener("click", previousPage);
+      book.dispose();
     };
   }, [book]);
 

@@ -4,9 +4,9 @@ const FlipBookScene = lazy(() => import("./components/FlipBookScene"));
 
 export default function App() {
   return (
-    <div className="h-screen w-screen overflow-hidden bg-gradient-to-b from-slate-900 to-slate-950 text-white font-sans">
+    <div className="h-screen w-screen overflow-hidden bg-linear-to-b from-slate-900 to-slate-950 text-white font-sans">
       {/* UI */}
-      <div className="pointer-events-none fixed top-[30px] z-10 w-full text-center">
+      <div className="pointer-events-none fixed top-7.5 z-10 w-full text-center">
         <h1 className="text-[clamp(2rem,5vw,4rem)] font-extrabold tracking-[4px]">
           CLASS OF 2026
         </h1>
@@ -17,9 +17,9 @@ export default function App() {
       {/* BUTTONS */}
       <button
         className="
-          prev fixed bottom-[30px] left-5 z-20
+          prev fixed bottom-7.5 left-5 z-20
           rounded-full bg-white/10
-          px-[18px] py-3 text-sm
+          px-4.5 py-3 text-sm
           backdrop-blur-xl
         "
       >
@@ -28,9 +28,9 @@ export default function App() {
 
       <button
         className="
-          next fixed bottom-[30px] right-5 z-20
+          next fixed bottom-7.5 right-5 z-20
           rounded-full bg-white/10
-          px-[18px] py-3 text-sm
+          px-4.5 py-3 text-sm
           backdrop-blur-xl
         "
       >
